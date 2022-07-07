@@ -11,7 +11,7 @@ env:
   DEV_PORT: 20022
   DEV_USERNAME: "datau"
   DIST: false
-  IMAGE_NAME: ${{ github.event.repository.name }}
+  IMAGE_NAME: "grpc"
   MESSAGE: ${{ github.event.head_commit.message }}
  
 jobs:
