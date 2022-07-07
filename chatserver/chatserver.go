@@ -116,7 +116,7 @@ func ListFeatures(pNumber string, room string, stream Services_ChatServiceServer
 
 	AddrInfo[p.Addr.String()] = pNumber
 
-	makeSliceUnique(RoomInfo[room])
+	RoomInfo[room] = makeSliceUnique(RoomInfo[room])
 
 	return nil
 }
