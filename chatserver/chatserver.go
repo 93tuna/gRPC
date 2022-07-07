@@ -8,6 +8,7 @@ import (
 	"sync"
 	"time"
 
+	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/peer"
 )
 
@@ -52,9 +53,24 @@ var AddrInfo = map[string]string{}
 //define ChatService
 func (*ChatServer) ChatService(csi Services_ChatServiceServer) error {
 
+	var pNumber string
+	var room string
+
+	md, ok := metadata.FromIncomingContext(csi.Context())
+	if ok {
+		if len(md["pnumber"]) > 0 {
+			pNumber = md["pnumber"][0]
+		}
+
+		if len(md["room"]) > 0 {
+			room = md["room"][0]
+		}
+		log.Print(md)
+	}
+
 	errch := make(chan error)
 
-	ListFeatures(csi)
+	ListFeatures(pNumber, room, csi)
 
 	// p, _ := peer.FromContext(csi.Context())
 
@@ -70,54 +86,23 @@ func (*ChatServer) ChatService(csi Services_ChatServiceServer) error {
 
 	// fmt.Println(p.Addr.String())
 
-	// md, ok := metadata.FromIncomingContext(csi.Context())
-	// if ok {
-	// 	fmt.Println("PNumber : ", md["pnumber"][0], "Room : ", md["room"][0])
-	// 	pNumber = md["pnumber"][0]
-	// 	room = md["room"][0]
-	// 	Users.User = append(Users.User, Config{
-	// 		Pnumber: pNumber,
-	// 		Room:    room,
-	// 	})
-	// }
-
 	return <-errch
 
 }
 
-func ListFeatures(stream Services_ChatServiceServer) error {
+func ListFeatures(pNumber string, room string, stream Services_ChatServiceServer) error {
 	// Save this stream instance in the server on a map or other suitable data structure
 	// so that you can query for this stream instance later
 	// This will act same like your websocket session
 
-	var pNumber string
-	var room string
+	RoomInfo[room] = append(RoomInfo[room], pNumber)
+	StreamInfo[pNumber] = stream
 
-	mssg, err := stream.Recv()
-	if err != nil {
-		log.Printf("Error in receiving message from client :: %v", err)
-		fmt.Println("ListFeatures")
-		return err
+	p, _ := peer.FromContext(stream.Context())
 
-	} else {
-
-		pNumber = mssg.Pnumber
-		room = mssg.Room
-		// val, exists := RoomInfo[room]
-		// if exists {
-
-		// }
-		RoomInfo[room] = append(RoomInfo[room], pNumber)
-		StreamInfo[pNumber] = stream
-
-		p, _ := peer.FromContext(stream.Context())
-
-		AddrInfo[p.Addr.String()] = pNumber
-
-	}
+	AddrInfo[p.Addr.String()] = pNumber
 
 	return nil
-
 }
 
 func (*ChatServer) PingPong(ctx context.Context, req *FromClient) (*FromServer, error) {

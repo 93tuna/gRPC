@@ -10,6 +10,7 @@ import (
 	"strings"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/metadata"
 )
 
 const (
@@ -72,17 +73,17 @@ func main() {
 
 	room = strings.Trim(room, "\r\n")
 
-	// md := metadata.Pairs(
-	// 	"pnumber", pNumber,
-	// 	"room", room,
-	// )
+	md := metadata.Pairs(
+		"pnumber", pNumber,
+		"room", room,
+	)
 
-	// mdCtx := metadata.NewOutgoingContext(context.Background(), md)
+	mdCtx := metadata.NewOutgoingContext(context.Background(), md)
 
 	//call ChatService to create a stream
 	client := chatserver.NewServicesClient(conn)
 
-	stream, err := client.ChatService(context.Background())
+	stream, err := client.ChatService(mdCtx)
 	if err != nil {
 		log.Fatalf("Failed to call ChatService :: %v", err)
 	}

@@ -68,6 +68,12 @@ jobs:
         tags: ghcr.io/datauniverse-lab/${{ env.PROJECT }}/${{ env.IMAGE_NAME }}:master
         labels: ${{ steps.meta.outputs.labels }}
 
+    - name: Docker-Compose Read Dev
+      id: docker-compose-dev
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: './${{ github.event.repository.name }}/build/docker-compose-dev.yml'
+
     - name: Success Deploy Step Dev
       uses: appleboy/ssh-action@master
       with:
@@ -78,7 +84,7 @@ jobs:
         script: |
           mkdir /tmp/${{ env.IMAGE_NAME }}||true
           sudo cat > /tmp/${{ env.IMAGE_NAME }}/${{ env.IMAGE_NAME }}`date +"%m%d"`_v${{ github.run_number }}.yml <<EOF
-          ${{ steps.docker-compose.outputs.content }}
+          ${{ steps.docker-compose-dev.outputs.content }}
           EOF
           sudo docker login https://ghcr.io -u pessimon -p ${{ secrets.PR_TOKEN }}
           sudo docker pull ghcr.io/datauniverse-lab/${{ env.PROJECT }}/${{ env.IMAGE_NAME }}:master||true
