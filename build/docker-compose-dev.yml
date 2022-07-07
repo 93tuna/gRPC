@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  gRPC:  # 임의로 정한 명칭. docker run에서 컨테이너명 지정과 약간 비슷
+    container_name: gRPC
+    image: ghcr.io/datauniverse-lab/tesla/gRPC:master
+    hostname: DEV-BENTLEY
+    restart: always
+    network_mode: bridge
+    ports:
+       - 5000:5000
+networks:
+  default:
+    external: true
+    name: bridge

@@ -1,0 +1,87 @@
+name: build
+
+on:
+  push:
+    branches:    
+      - master
+
+env:
+  PROJECT: "tesla"
+  DEV_IP: "49.247.192.42"
+  DEV_PORT: 20022
+  DEV_USERNAME: "datau"
+  DIST: false
+  IMAGE_NAME: ${{ github.event.repository.name }}
+  MESSAGE: ${{ github.event.head_commit.message }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: ${{ github.repository}}
+        ref: refs/heads/master
+        path: './${{ env.IMAGE_NAME }}'
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.16
+    
+    - uses: actions/cache@v2
+      with:
+        path: |
+          ~/.cache/go-build
+          ~/go/pkg/mod
+        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+        restore-keys: |
+          ${{ runner.os }}-go-${{ env.IMAGE_NAME }}
+    
+    - name: mod download
+      run : cd ${{ env.IMAGE_NAME }}; go get -v ./...
+      
+    - name: Build
+      run: mkdir dist; cd ${{ env.IMAGE_NAME }}; cp Dockerfile ../; CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -v -o  ../dist/${{ env.IMAGE_NAME }}  -ldflags "-X main.buildTime=$(date +'%Y/%m/%d_%H:%M:%S')_v"${{ github.run_number }} ./
+  
+    - name: Log in to the Container registry
+      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+      with:
+        registry: ghcr.io
+        USERNAME: "pessimondatau"
+        password: ${{ secrets.PR_TOKEN }}
+
+    - name: Extract metadata (tags, labels) for Docker
+      id: meta
+      uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+      with:
+        images: ghcr.io/datauniverse-lab/${{ env.PROJECT }}/${{ env.IMAGE_NAME }}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+      with:
+        context: .
+        push: true
+        tags: ghcr.io/datauniverse-lab/${{ env.PROJECT }}/${{ env.IMAGE_NAME }}:master
+        labels: ${{ steps.meta.outputs.labels }}
+
+    - name: Success Deploy Step Dev
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ env.DEV_IP }}
+        username: ${{ env.DEV_USERNAME }}
+        key_path: "./${{ env.IMAGE_NAME }}/build/ssh-dev"
+        port: ${{ env.DEV_PORT }}
+        script: |
+          mkdir /tmp/${{ env.IMAGE_NAME }}-${{ steps.tag.outputs.value }}||true
+          sudo cat > /tmp/${{ env.IMAGE_NAME }}-${{ steps.tag.outputs.value }}/${{ env.IMAGE_NAME }}`date +"%m%d"`_v${{ github.run_number }}.yml <<EOF
+          ${{ steps.docker-compose.outputs.content }}
+          EOF
+          sudo docker login https://ghcr.io -u pessimon -p ${{ secrets.PR_TOKEN }}
+          sudo docker pull ghcr.io/datauniverse-lab/${{ env.PROJECT }}/${{ env.IMAGE_NAME }}:master||true
+          sudo docker stop ${{ env.IMAGE_NAME }}||true
+          sudo docker rm ${{ env.IMAGE_NAME }}||true
+          sudo docker-compose -f /tmp/${{ env.IMAGE_NAME }}-${{ steps.tag.outputs.value }}/${{ env.IMAGE_NAME }}`date +"%m%d"`_v${{ github.run_number }}.yml up --detach
