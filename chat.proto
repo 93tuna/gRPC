@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package chatserver;
+option go_package="chatserver/";
+
+message FromClient {
+    string pnumber = 1;
+    string body = 2;
+    string room = 3;
+}
+
+message FromServer {
+    string pnumber = 1;
+    string body = 2;
+    string room = 3;
+}
+
+service Services {
+    rpc ChatService(stream FromClient) returns (stream FromServer) {};
+    rpc PingPong(FromClient) returns (FromServer) {};
+}

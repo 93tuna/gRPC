@@ -1,0 +1,328 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-pc-mingw32
+ 
+
+# ����ũ ����Ÿ���̽�, Thu Jul 07 11:07:33 2022
+�� ǥ��
+# ����
+
+# �ڵ�
+<D = $(patsubst %/,%,$(dir $<))
+# �ڵ�
+?F = $(notdir $?)
+# ȯ��
+PROVIDE_FULLSTACK_ACTION = true
+# ����ũ����
+MAKEFLAGS = Rrqp
+# ȯ��
+VSCODE_LOG_NATIVE = false
+# �ڵ�
+?D = $(patsubst %/,%,$(dir $?))
+# �ڵ�
+@D = $(patsubst %/,%,$(dir $@))
+# ȯ��
+HOMEDRIVE = C:
+# �ڵ�
+@F = $(notdir $@)
+# �ڵ�
+^D = $(patsubst %/,%,$(dir $^))
+# ����ũ����
+CURDIR := c:/Users/eett0/go/src/grpc/gRPC
+# �⺻��
+SHELL := sh.exe
+# ȯ��
+WINDIR = C:\Windows
+# ȯ��
+VSCODE_NLS_CONFIG = {"locale":"ko","availableLanguages":{"*":"ko"},"_languagePackId":"738ac08552cca045871a73764b8c446f.ko","_translationsConfigFile":"C:\\Users\\eett0\\AppData\\Roaming\\Code\\clp\\738ac08552cca045871a73764b8c446f.ko\\tcf.json","_cacheRoot":"C:\\Users\\eett0\\AppData\\Roaming\\Code\\clp\\738ac08552cca045871a73764b8c446f.ko","_resolvedLanguagePackCoreLocation":"C:\\Users\\eett0\\AppData\\Roaming\\Code\\clp\\738ac08552cca045871a73764b8c446f.ko\\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"C:\\Users\\eett0\\AppData\\Roaming\\Code\\clp\\738ac08552cca045871a73764b8c446f.ko\\corrupted.info","_languagePackSupport":true}
+# ȯ��
+ONEDRIVE = C:\Users\eett0\OneDrive
+# ȯ��
+ANDROID_PLATFORM_TOOLS = C:\devtool\platform-tools
+# ȯ��
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+# ����ũ���� (from `makefile', line 1)
+MAKEFILE_LIST :=  makefile
+# ȯ��
+FPS_BROWSER_USER_PROFILE_STRING = Default
+# ȯ��
+TMP = C:\Users\eett0\AppData\Local\Temp
+# ȯ��
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# ȯ��
+VSCODE_VERBOSE_LOGGING = true
+# ȯ��
+PROGRAMW6432 = C:\Program Files
+# ȯ��
+PROGRAMDATA = C:\ProgramData
+# ȯ��
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-bca3aa42-d7a8-4179-8b3c-3b7537746f66-sock
+# ȯ��
+VSCODE_CWD = C:\Windows\system32
+# ȯ��
+GOPROXY = https://proxy.golang.org,direct
+# ȯ��
+PATH = C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin;C:\Program Files\VanDyke Software\SecureCRT\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Go\bin;C:\Program Files\Java\jdk-17\bin;C:\devtool\apache-maven-3.8.3\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\devtool\platform-tools\;C:\Users\eett0\AppData\Local\Microsoft\WindowsApps;C:\Users\eett0\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\eett0\go\bin;C:\Users\eett0\AppData\Local\GitHubDesktop\bin;C:\Users\eett0\AppData\Roaming\npm;C:\Users\eett0\protoc\bin;C:\Program Files (x86)\GnuWin32\bin;
+# ȯ��
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# ȯ��
+GOLANG_EXECUTABLE = go
+# ȯ��
+PROCESSOR_ARCHITECTURE = x86
+# ȯ��
+THREE_SCALE_USER_TOKEN = 207c527cfc2a6b8dcf4fa43ad7a976da
+# ȯ��
+USERPROFILE = C:\Users\eett0
+# ȯ��
+ALLUSERSPROFILE = C:\ProgramData
+# ȯ��
+GOPATH = C:\Users\eett0\go
+# ȯ��
+VSCODE_LOG_STACK = false
+# ȯ��
+NUMBER_OF_PROCESSORS = 16
+# ȯ��
+ELECTRON_RUN_AS_NODE = 1
+# �⺻��
+.FEATURES := target-specific order-only second-expansion else-if archives
+# ȯ��
+UUID = 196c73f4-bddb-4e7e-81ab-b76305433530
+# ȯ��
+JDK_HOME = C:\Program Files\Java\jdk-17
+# �ڵ�
+%F = $(notdir $%)
+# ȯ��
+ANDROID_SDK_HOME = C:\Users\eett0\AppData\Local\Android\Sdk
+# ȯ��
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11796_STCOTFYFGBQXTARZ
+# ȯ��
+VSCODE_PIPE_LOGGING = true
+# ȯ��
+COMPUTERNAME = DESKTOP-6QIC0V3
+# ȯ��
+PROGRAMFILES = C:\Program Files (x86)
+# ȯ��
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# ȯ��
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# ȯ��
+USERNAME = dong
+# ȯ��
+PUBLIC = C:\Users\Public
+# ȯ��
+GOMODCACHE = C:\Users\eett0\go\pkg\mod
+# ȯ��
+VSCODE_CODE_CACHE_PATH = C:\Users\eett0\AppData\Roaming\Code\CachedData\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# ȯ��
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# ȯ��
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# ȯ��
+LOGONSERVER = \\DESKTOP-6QIC0V3
+# ȯ��
+TELEMETRY_ID = b38e122c-8471-4758-9e51-5e7697020448
+# ȯ��
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# ȯ��
+USERDOMAIN = DESKTOP-6QIC0V3
+# �⺻��
+MAKE = $(MAKE_COMMAND)
+# �⺻��
+MAKECMDGOALS := all
+# ȯ��
+JAVA_HOME = C:\Program Files\Java\jdk-17
+# �⺻��
+MAKE_VERSION := 3.81
+# ����ũ����
+.DEFAULT_GOAL := protos
+# ȯ��
+CLASSPATH = C:\Program Files\Java\jdk-17\;.;
+# ȯ��
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# �ڵ�
+%D = $(patsubst %/,%,$(dir $%))
+# ȯ��
+LOCALAPPDATA = C:\Users\eett0\AppData\Local
+# ȯ��
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+# �⺻��
+MAKE_COMMAND := make.exe
+# ȯ��
+UTM_SOURCE = vscode
+# ȯ��
+PROCESSOR_ARCHITEW6432 = AMD64
+# �⺻��
+.VARIABLES := 
+# �ڵ�
+*F = $(notdir $*)
+# ȯ��
+PROCESSOR_IDENTIFIER = AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD
+# ȯ��
+OS = Windows_NT
+# ȯ��
+VSCODE_IPC_HOOK = \\.\pipe\fdf0f02acbb8a02409a506cf5cfc8894-1.67.2-main-sock
+# ȯ��
+HOMEPATH = \Users\eett0
+# ȯ��
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# ȯ��
+PROMPT = $P$G
+# ȯ��
+MFLAGS = -Rrqp
+# �ڵ�
+*D = $(patsubst %/,%,$(dir $*))
+# ȯ��
+SYSTEMROOT = C:\Windows
+# �ڵ�
++D = $(patsubst %/,%,$(dir $+))
+# ȯ��
+RECOMMENDER_API_URL = https://gw.api.openshift.io//api/v2
+# �ڵ�
++F = $(notdir $+)
+# ȯ��
+APPDATA = C:\Users\eett0\AppData\Roaming
+# ȯ��
+TEMP = C:\Users\eett0\AppData\Local\Temp
+# ȯ��
+COMSPEC = C:\Windows\system32\cmd.exe
+# �⺻��
+MAKEFILES := 
+# �ڵ�
+<F = $(notdir $<)
+# ȯ��
+ANDROID_SDK_ROOT = C:\Users\eett0\AppData\Local\Android\Sdk
+# ȯ��
+LC_ALL = C
+# �ڵ�
+^F = $(notdir $^)
+# �⺻��
+SUFFIXES := 
+# ȯ��
+SYSTEMDRIVE = C:
+# ȯ��
+SESSIONNAME = Console
+# ȯ��
+PROCESSOR_REVISION = 5000
+# ȯ��
+MAKELEVEL := 0
+# ȯ��
+LANG = C
+# ȯ��
+PROCESSOR_LEVEL = 25
+# ȯ��
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+# ȯ��
+VSCODE_PID = 11796
+# ȯ��
+USERDOMAIN_ROAMINGPROFILE = DESKTOP-6QIC0V3
+# variable set hash-table stats:
+# Load=104/1024=10%, Rehash=0, Collisions=11/124=9%
+
+# Pattern-specific Variable Values
+
+# ������ ���� ���� ������ �����ϴ�.
+
+# ���丮
+
+# C:\Program Files\Docker\Docker\resources\bin (Ű C:/Program Files/Docker/Docker/resources/bin, ����ð� 1631251491): 13 ����, 0�� �Ұ���.
+# C:\Program Files\Go\bin (Ű C:/Program Files/Go/bin, ����ð� 1634095360): 4 ����, 0�� �Ұ���.
+# C:\Windows\System32\WindowsPowerShell\v1.0\ (Ű C:/Windows/System32/WindowsPowerShell/v1.0/, ����ð� 1626970463): 32 ����, 0�� �Ұ���.
+# C:\Users\eett0\AppData\Local\Programs\Microsoft VS Code\bin (Ű C:/Users/eett0/AppData/Local/Programs/Microsoft VS Code/bin, ����ð� 1653458790): 4 ����, 0�� �Ұ���.
+# C:\Windows\System32\Wbem (Ű C:/Windows/System32/Wbem, ����ð� 1655290428): 172 ����, 0�� �Ұ���.
+# . (Ű c:/Users/eett0/go/src/grpc/gRPC, ����ð� 1657159617): 12 ����, 0�� �Ұ���.
+# C:\Users\eett0\protoc\bin (Ű C:/Users/eett0/protoc/bin, ����ð� 1655448720): 3 ����, 0�� �Ұ���.
+# C:\Program Files\MySQL\MySQL Server 8.0\bin (Ű C:/Program Files/MySQL/MySQL Server 8.0/bin, ����ð� 1636981060): 52 ����, 0�� �Ұ���.
+# C:\Users\eett0\AppData\Roaming\npm (Ű C:/Users/eett0/AppData/Roaming/npm, ����ð� 1642675923): 2 ����, 0�� �Ұ���.
+# C:\Program Files\nodejs\ (Ű C:/Program Files/nodejs/, ����ð� 1642675931): 13 ����, 0�� �Ұ���.
+# C:\devtool\platform-tools\ (Ű C:/devtool/platform-tools/, ����ð� 1648005802): 17 ����, 0�� �Ұ���.
+# C:\devtool\apache-maven-3.8.3\bin (Ű C:/devtool/apache-maven-3.8.3/bin, ����ð� 1632734722): 8 ����, 0�� �Ұ���.
+# C:\Windows\System32\OpenSSH\: stat�� �� �� �������ϴ�.
+# C:\Program Files\PuTTY\ (Ű C:/Program Files/PuTTY/, ����ð� 1640151622): 12 ����, 0�� �Ұ���.
+# C:\Program Files (x86)\Common Files\Oracle\Java\javapath (Ű C:/Program Files (x86)/Common Files/Oracle/Java/javapath, ����ð� 1650944216): 5 ����, 0�� �Ұ���.
+# C:\Users\eett0\AppData\Local\GitHubDesktop\bin (Ű C:/Users/eett0/AppData/Local/GitHubDesktop/bin, ����ð� 1642042436): 4 ����, 0�� �Ұ���.
+# C:\Users\eett0\AppData\Local\Microsoft\WindowsApps (Ű C:/Users/eett0/AppData/Local/Microsoft/WindowsApps, ����ð� 1656436445): 30 ����, 0�� �Ұ���.
+# C:\Program Files\Java\jdk-17\bin (Ű C:/Program Files/Java/jdk-17/bin, ����ð� 1634257874): 123 ����, 0�� �Ұ���.
+# C:\Windows (Ű C:/Windows, ����ð� 1656580014): 139 ����, 0�� �Ұ���.
+# C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin (Ű C:/Program Files/Eclipse Foundation/jdk-11.0.12.7-hotspot/bin, ����ð� 1634257619): 127 ����, 0�� �Ұ���.
+# C:\Program Files\VanDyke Software\SecureCRT\ (Ű C:/Program Files/VanDyke Software/SecureCRT/, ����ð� 1634112944): 124 ����, 0�� �Ұ���.
+# C:\Users\eett0\go\bin (Ű C:/Users/eett0/go/bin, ����ð� 1655449068): 33 ����, 0�� �Ұ���.
+# C:\ProgramData\DockerDesktop\version-bin (Ű C:/ProgramData/DockerDesktop/version-bin, ����ð� 1631251521): 2 ����, 0�� �Ұ���.
+# C:\Program Files\Git\cmd (Ű C:/Program Files/Git/cmd, ����ð� 1630894187): 8 ����, 0�� �Ұ���.
+# C:\Windows\system32 (Ű C:/Windows/system32, ����ð� 1656905225): 2881 ����, 0�� �Ұ���.
+# C:\Program Files (x86)\GnuWin32\bin (Ű C:/Program Files (x86)/GnuWin32/bin, ����ð� 1655788944): 5 ����, 0�� �Ұ���.
+
+# 3825 ����, 0�� impossibilities in 26 directories.
+
+# Implicit Rules
+
+# ������ ��Ģ ����.
+
+# ����
+
+# Ÿ���� �ƴ�:
+all:
+#  ������ Ÿ��.
+#  ������ ��Ģ Ž���� �Ϸ�Ǿ����ϴ�.
+#  ������ �������� �ʽ��ϴ�.
+#  ������ ���ŵ��� �ʾҽ��ϴ�.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+protos:
+#  ���� Ÿ�� (.PHONY�� ��������).
+#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
+#  ������ �������� �ʽ��ϴ�.
+#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  ������ ���ɾ� (`makefile'����, 4��° ��):
+	protoc --go_out=. --go-grpc_out=. chat.proto
+	
+
+.PHONY: protos
+#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
+#  ���� �ð��� ���� �˻���� �ʾ���.
+#  ������ ���ŵ��� �ʾҽ��ϴ�.
+
+# Ÿ���� �ƴ�:
+.DEFAULT:
+#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
+#  ���� �ð��� ���� �˻���� �ʾ���.
+#  ������ ���ŵ��� �ʾҽ��ϴ�.
+
+# Ÿ���� �ƴ�:
+makefile:
+#  ������ ��Ģ Ž���� �Ϸ�Ǿ����ϴ�.
+#  ������ ���� 2022-06-21 10:43:02
+#  ������ ���ŵǾ����ϴ�.
+#  ���������� ���ŵ�.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Ÿ���� �ƴ�:
+.SUFFIXES:
+#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
+#  ���� �ð��� ���� �˻���� �ʾ���.
+#  ������ ���ŵ��� �ʾҽ��ϴ�.
+
+# files hash-table stats:
+# Load=6/1024=1%, Rehash=0, Collisions=0/18=0%
+# VPATH Ž�� ���
+
+# `vpath' Ž�� ��ΰ� ����.
+
+# �Ϲ����� (`VPATH' ����) Ž�� ��ΰ� ����.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# ����ũ ����Ÿ ���̽� ��ħ, Thu Jul 07 11:07:33 2022
+����
+ 
+make.exe: *** Ÿ�� `all'�� ���� ��Ģ�� ����.  ����.
+
