@@ -72,7 +72,7 @@ jobs:
       id: docker-compose-dev
       uses: juliangruber/read-file-action@v1
       with:
-        path: './${{ github.event.repository.name }}/build/docker-compose-dev.yml'
+        path: './${{ env.IMAGE_NAME }}/build/docker-compose-dev.yml'
 
     - name: Success Deploy Step Dev
       uses: appleboy/ssh-action@master
