@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 services:
   gRPC:  # 임의로 정한 명칭. docker run에서 컨테이너명 지정과 약간 비슷
     container_name: grpc
