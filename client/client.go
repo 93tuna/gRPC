@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	address = "localhost:5000"
+	address = "49.247.192.42:5000"
 )
 
 // type wrappedStream struct {

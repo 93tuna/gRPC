@@ -90,6 +90,20 @@ func (*ChatServer) ChatService(csi Services_ChatServiceServer) error {
 
 }
 
+func makeSliceUnique(s []string) []string {
+	keys := make(map[string]struct{})
+	res := make([]string, 0)
+	for _, val := range s {
+		if _, ok := keys[val]; ok {
+			continue
+		} else {
+			keys[val] = struct{}{}
+			res = append(res, val)
+		}
+	}
+	return res
+}
+
 func ListFeatures(pNumber string, room string, stream Services_ChatServiceServer) error {
 	// Save this stream instance in the server on a map or other suitable data structure
 	// so that you can query for this stream instance later
@@ -101,6 +115,8 @@ func ListFeatures(pNumber string, room string, stream Services_ChatServiceServer
 	p, _ := peer.FromContext(stream.Context())
 
 	AddrInfo[p.Addr.String()] = pNumber
+
+	makeSliceUnique(RoomInfo[room])
 
 	return nil
 }
