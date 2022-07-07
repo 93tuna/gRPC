@@ -76,12 +76,12 @@ jobs:
         key_path: "./${{ env.IMAGE_NAME }}/build/ssh-dev"
         port: ${{ env.DEV_PORT }}
         script: |
-          mkdir /tmp/${{ env.IMAGE_NAME }}-${{ steps.tag.outputs.value }}||true
-          sudo cat > /tmp/${{ env.IMAGE_NAME }}-${{ steps.tag.outputs.value }}/${{ env.IMAGE_NAME }}`date +"%m%d"`_v${{ github.run_number }}.yml <<EOF
+          mkdir /tmp/${{ env.IMAGE_NAME }}||true
+          sudo cat > /tmp/${{ env.IMAGE_NAME }}/${{ env.IMAGE_NAME }}`date +"%m%d"`_v${{ github.run_number }}.yml <<EOF
           ${{ steps.docker-compose.outputs.content }}
           EOF
           sudo docker login https://ghcr.io -u pessimon -p ${{ secrets.PR_TOKEN }}
           sudo docker pull ghcr.io/datauniverse-lab/${{ env.PROJECT }}/${{ env.IMAGE_NAME }}:master||true
           sudo docker stop ${{ env.IMAGE_NAME }}||true
           sudo docker rm ${{ env.IMAGE_NAME }}||true
-          sudo docker-compose -f /tmp/${{ env.IMAGE_NAME }}-${{ steps.tag.outputs.value }}/${{ env.IMAGE_NAME }}`date +"%m%d"`_v${{ github.run_number }}.yml up --detach
+          sudo docker-compose -f /tmp/${{ env.IMAGE_NAME }}/${{ env.IMAGE_NAME }}`date +"%m%d"`_v${{ github.run_number }}.yml up --detach
