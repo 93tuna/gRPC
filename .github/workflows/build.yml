@@ -9,7 +9,7 @@ env:
   PROJECT: "tesla"
   DEV_IP: "49.247.192.42"
   DEV_PORT: 20022
-  DEV_USERNAME: "datau"
+  DEV_USERNAME: "root"
   DIST: false
   IMAGE_NAME: "grpc"
   MESSAGE: ${{ github.event.head_commit.message }}
